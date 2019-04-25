@@ -1,0 +1,38 @@
+[
+    {
+    date: "2019-04-18",
+    tamilDate : 3,
+    tamilMonthName: "சித்திரை",
+    tamilYearName : "விஹாரி வருடம்" ,
+    goodTime : [ "6.30 AM -7.45 AM", "5.30 PM - 7.35PM" ],
+    emakandam : [ "10.10 AM - 11.00 AM"],
+    kuligai : "1.10 PM - 1.45 PM" 
+    },
+    {
+    date: "2019-04-19",
+    tamilDate : 4,
+    tamilMonthName: "சித்திரை",
+    tamilYearName : "விஹாரி வருடம்" ,
+    goodTime : [ "6.30 AM -7.45 AM", "5.30 PM - 7.35PM" ],
+    emakandam : [ "10.10 AM - 11.00 AM"],
+    kuligai : "1.10 PM - 1.45 PM" 
+    },
+    {
+    date: "2019-04-20",
+    tamilDate : 5,
+    tamilMonthName: "சித்திரை",
+    tamilYearName : "விஹாரி வருடம்" ,
+    goodTime : [ "6.30 AM -7.45 AM", "5.30 PM - 7.35PM" ],
+    emakandam : [ "10.10 AM - 11.00 AM"],
+    kuligai : "1.10 PM - 1.45 PM" 
+    },
+    {
+    date: "2019-04-21",
+    tamilDate : 6,
+    tamilMonthName: "சித்திரை",
+    tamilYearName : "விஹாரி வருடம்" ,
+    goodTime : [ "6.30 AM -7.45 AM", "5.30 PM - 7.35PM" ],
+    emakandam : [ "10.10 AM - 11.00 AM"],
+    kuligai : "1.10 PM - 1.45 PM" 
+    }
+    ]
