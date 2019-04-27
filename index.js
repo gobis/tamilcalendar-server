@@ -28,6 +28,19 @@ app.get('/getall', (req,res) => {
 });
 
 
+app.get('/get', (req,res) => {
+  
+ 
+ calendar.get(req, function(err,result) {
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.write(result);
+  res.end();
+ });
+
+
+});
+
+
 app.post('/create', (req,res) => {
 
 

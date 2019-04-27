@@ -26,6 +26,21 @@ var getAll = function(callback){
    });
  }
 
+
+ var get = function(req,callback){
+   var db =  mongoClient.getClient();
+   var collection = db.collection(mongoClient.collectionName);
+
+   var date = req.query.date; 
+  
+   var queryObject = { "date":date };
+
+   collection.find(queryObject).toArray(function(err, items) {
+     if( err ) callback(err)
+     else callback(null, JSON.stringify(items));
+  });
+}
+
 var getSingle = function(query){
 
 }
@@ -48,5 +63,6 @@ var deleteRecord = function(query){
 
 module.exports = {
    createMany : createMany,
-   getAll : getAll
+   getAll : getAll,
+   get : get
 }
