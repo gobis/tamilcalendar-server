@@ -5,8 +5,8 @@ node js code for tamil calendar
    create database and collection manually, will add the code later to create the same programmatically
    
 currently supported  
-   /getall  \n 
-   /get?date=2019-04-20
+   /all  \n 
+   /date?date=2019-04-20
    
  
    
