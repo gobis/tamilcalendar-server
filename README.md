@@ -6,7 +6,7 @@ node js code for tamil calendar
    
 currently supported  
    /getall  \n 
-   /get?date=24-04-2019
+   /get?date=2019-04-20
    
  
    
