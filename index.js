@@ -18,7 +18,7 @@ app.get('/greet', (req,res) => {
 });
 
 
-app.get('/getall', (req,res) => {
+app.get('/all', (req,res) => {
 
   calendar.getAll(function(err,result){
   res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -28,20 +28,28 @@ app.get('/getall', (req,res) => {
 });
 
 
-app.get('/get', (req,res) => {
-  
- 
+app.get('/date', (req,res) => {
  calendar.get(req, function(err,result) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.write(result);
   res.end();
  });
+});
+
+app.delete('/date', (req,res) => {
+  calendar.delete(req, function(err,result) {
+   res.setHeader("Content-Type", "application/json; charset=utf-8");
+   res.write(result);
+   res.end();
+  });
+ })
+
+app.post('/date', (req,res) => {
 
 
 });
 
-
-app.post('/create', (req,res) => {
+app.put('/date', (req,res) => {
 
 
 });

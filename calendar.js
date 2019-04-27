@@ -56,13 +56,24 @@ var update = function(query){
 }
 
 
-var deleteRecord = function(query){
+var deleteDate = function(req,callback){
+   var db =  mongoClient.getClient();
+   var collection = db.collection(mongoClient.collectionName);
 
+   var date = req.query.date; 
+  
+   var queryObject = { "date":date };
+
+   collection.deleteMany(queryObject,function(err, result) {
+     if( err ) callback(err)
+     else callback(null, JSON.stringify(items));
+  });
 }
 
 
 module.exports = {
    createMany : createMany,
    getAll : getAll,
-   get : get
+   get : get ,
+   delete : deleteDate
 }
