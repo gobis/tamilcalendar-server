@@ -1,11 +1,15 @@
-var express = require('express')
-var bodyParser = require('body-parser')
-var mongoClient = require('./mongoconn')
+var express = require('express');
+var bodyParser = require('body-parser');
+var mongoClient = require('./mongoconn');
+
+var fs = require('fs')
+
+var calendar = require('./calendar')
 
 var app = express()
 app.use(bodyParser.json())
 
-const port = 3000
+const port = 3000;
 
 
 app.get('/greet', (req,res) => {
@@ -15,23 +19,33 @@ app.get('/greet', (req,res) => {
 
 
 app.get('/getall', (req,res) => {
-  var client =  mongoClient.getClient();
-  var dbo = client.db('tamilcaldb');
-  var collection = dbo.collection('myCollection');
-  collection.find().toArray(function(err, items) {
-        res.setHeader("Content-Type", "application/json; charset=utf-8");
-        res.write(JSON.stringify(items));
-        res.end();
-    });
+
+  calendar.getAll(function(err,result){
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.write(result);
+  res.end();
+ });
 });
 
 
 app.post('/create', (req,res) => {
 
-  
 
 });
 
+app.get('/readfromlocal', (req,res) => {
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+   // read the data from local file system ( sampledata/sample_tamil_cal.txt)
+   fs.readFile('sampledata/sample_tamil_cal.txt', function(err,data){
+
+    if(!err) {
+     calendar.createMany(data.toString());
+    } else {
+      console.log('Error in reading file');
+    }
+   });
+});
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
 

@@ -1,24 +1,25 @@
 
-var MongoClient = require('mongodb').MongoClient;
-
+var mongojs = require('mongojs');
 
 var mongodbClient ;
+var collectionName = 'calendar';
+var dbName = 'tamilcaldb';
+var hostName = 'localhost';
+var portNumber = '27017';
 
 var getStoreClient = function(){
-// Connect to the db if connection is not established
 
-if(mongodbClient == null || mongodbClient == 'undefined') {
-MongoClient.connect("mongodb://localhost:27017/", function(err, db) {
-    if(!err) {
-      console.log("We are connected");
-    }
-    mongodbClient = db ;
-   });
-}
+ if(mongodbClient == null || mongodbClient == 'undefined') {
+    var mongodbClient =  mongojs(hostName + ':' + portNumber + '/' + dbName);
+  }
+
  return mongodbClient;
 }
 
 
+
+
 module.exports = {
-    getClient : getStoreClient
+    getClient : getStoreClient,
+    collectionName : collectionName 
 }
