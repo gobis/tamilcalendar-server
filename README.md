@@ -6,6 +6,6 @@ node js code for tamil calendar
    
 currently supported  
    /getall
-   /get?date=24-04-2019&projection=tamilDate,tamilYear 
+   /get?date=24-04-2019
    
 
